@@ -1,0 +1,30 @@
+{
+  "name": "04_express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "powershell-start": "@powershell -NoProfile -ExecutionPolicy Unrestricted -Command $env:PORT=3000; $env:NODE_ENV='development'; $env:app_password=1234; $env:DEBUG='app:*'; $env:vidly-jwtPrivateKey=cooldude; nodemon app.js",
+    "start": "set vidly-jwtPrivateKey=cooldude && nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "config": "^3.2.4",
+    "debug": "^4.1.1",
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "fawn": "^2.1.5",
+    "helmet": "^3.21.1",
+    "joi": "^14.3.1",
+    "joi-objectid": "^3.0.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mongoose": "^5.7.7",
+    "morgan": "^1.9.1",
+    "winston": "^3.2.1",
+    "winston-mongodb": "^5.0.1"
+  }
+}
