@@ -4,3 +4,4 @@ public/*
 !public/index.html
 build/*
 !build/.gitkeep
+*.log
