@@ -2,8 +2,8 @@ import * as express from 'express';
 require('express-async-errors');
 import * as stateRoutes from '../routes/state.route';
 
-// const error = require('../middlewares/error');
-// const logger = require('../middlewares/logger');
+import { logger } from '../middlewares/logger'
+import { handleError } from '../middlewares/error'
 
 // const customers = require('../routes/customers');
 // const genres = require('../routes/genres');
@@ -15,7 +15,7 @@ import * as stateRoutes from '../routes/state.route';
 export function route(app: express.Express) {
 
     app.use(express.json());
-    // app.use(logger);
+    app.use(logger);
 
     // app.use('/api/genres', genres);
     // app.use('/api/customers', customers);
@@ -27,6 +27,6 @@ export function route(app: express.Express) {
     app.use('/', express.static('public'));
 
     // handling global errors
-    // app.use(error);
+    app.use(handleError);
 
 }

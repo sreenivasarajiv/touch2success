@@ -11,6 +11,6 @@
     "logging": true,
     "synchronize": true,
     "extra": {
-        "connectionLimit": 4
+        "connectionLimit": 20
     }
 }

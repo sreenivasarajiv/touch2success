@@ -1,10 +1,10 @@
 import * as express from 'express';
 const router = express.Router();
-import { StateRepository } from '../repositories/state.repository'
+import { StateController } from '../controllers/state.controller'
 
-router.get('/', async (req, res) => {
-    const states = await new StateRepository().getStates();
-    res.json(states);
-});
+// TODO: need to establish Dependency Injection
+const controller = new StateController();
+
+router.get('/', controller.getStates);
 
 export = router;

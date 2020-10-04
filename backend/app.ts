@@ -10,7 +10,7 @@ import { establishDbConnectionPool } from './startup/database';
 // import './startup/config'();
 // require('./startup/database')();
 exceptionHandler();
-establishDbConnectionPool();
-route(app);
-
+establishDbConnectionPool().then(() => {
+    route(app);
+});
 app.listen(port, () => winston.info(`Listening to port: ${port}`));
