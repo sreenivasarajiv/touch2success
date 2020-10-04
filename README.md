@@ -8,8 +8,9 @@
 <br>
 
 1. API will be running in port __3000__.
-2. import Post Man Collection
-3. Execution steps:
+2. Database Connection Details are Present __ormconfig.json__
+3. Import Post Man Collection
+4. Execution steps:
     * First run Authentication API (__/auth__) and copy the __JWT Token__ (from response)
     
             email: sreenivasarajiv@gmail.com
