@@ -6,8 +6,11 @@
     "password": "Qwerty123$",
     "database": "srajivdemodb",
     "entities": [
-        "models/*.js"
+        "build/models/*.js"
     ],
     "logging": true,
-    "synchronize": true
+    "synchronize": true,
+    "extra": {
+        "connectionLimit": 4
+    }
 }

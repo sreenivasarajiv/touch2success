@@ -1,5 +1,6 @@
 import * as express from 'express';
 require('express-async-errors');
+import * as stateRoutes from '../routes/state.route';
 
 // const error = require('../middlewares/error');
 // const logger = require('../middlewares/logger');
@@ -22,6 +23,7 @@ export function route(app: express.Express) {
     // app.use('/api/rentals', rentals);
     // app.use('/api/users', users);
     // app.use('/api/auth', auth);
+    app.use('/state', stateRoutes);
     app.use('/', express.static('public'));
 
     // handling global errors

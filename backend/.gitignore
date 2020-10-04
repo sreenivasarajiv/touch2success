@@ -5,3 +5,4 @@ public/*
 build/*
 !build/.gitkeep
 *.log
+debug.log
