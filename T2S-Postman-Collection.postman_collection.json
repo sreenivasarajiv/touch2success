@@ -1,0 +1,165 @@
+{
+	"info": {
+		"_postman_id": "5b614b42-c6a7-4a6b-aef9-aada09ed108c",
+		"name": "T2S-Postman-Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticate",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"email\": \"sreenivasarajiv@gmail.com\",\n\t\"password\": \"Admin123$\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3000/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stores - With Customer Count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNyZWVuaXZhc2FyYWppdkBnbWFpbC5jb20iLCJuYW1lIjoiU3JlZW5pdmFzYSBSYWppdiBSIiwiaWF0IjoxNjAxODA2NjU2fQ.OWeZDb0Xp226Fj9vCuGif1HF-PiMis8erEaDZ9MyM1Y",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/store",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stores By Id - With Customer Count",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNyZWVuaXZhc2FyYWppdkBnbWFpbC5jb20iLCJuYW1lIjoiU3JlZW5pdmFzYSBSYWppdiBSIiwiaWF0IjoxNjAxODA2NjU2fQ.OWeZDb0Xp226Fj9vCuGif1HF-PiMis8erEaDZ9MyM1Y"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/store/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Stores - Search By Name Query",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNyZWVuaXZhc2FyYWppdkBnbWFpbC5jb20iLCJuYW1lIjoiU3JlZW5pdmFzYSBSYWppdiBSIiwiaWF0IjoxNjAxODA2NjU2fQ.OWeZDb0Xp226Fj9vCuGif1HF-PiMis8erEaDZ9MyM1Y",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/store?name=Real",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"store"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Real"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customers",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNyZWVuaXZhc2FyYWppdkBnbWFpbC5jb20iLCJuYW1lIjoiU3JlZW5pdmFzYSBSYWppdiBSIiwiaWF0IjoxNjAxODA2NjU2fQ.OWeZDb0Xp226Fj9vCuGif1HF-PiMis8erEaDZ9MyM1Y"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/customer",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Customers By Id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"type": "text",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNyZWVuaXZhc2FyYWppdkBnbWFpbC5jb20iLCJuYW1lIjoiU3JlZW5pdmFzYSBSYWppdiBSIiwiaWF0IjoxNjAxODA2NjU2fQ.OWeZDb0Xp226Fj9vCuGif1HF-PiMis8erEaDZ9MyM1Y"
+					}
+				],
+				"url": {
+					"raw": "localhost:3000/customer/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"customer",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
