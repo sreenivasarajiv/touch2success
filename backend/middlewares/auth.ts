@@ -1,7 +1,8 @@
-const jwt = require('jsonwebtoken');
-const config = require('config');
+import * as jwt from 'jsonwebtoken';
+import * as express from "express";
+import * as config from "config";
 
-module.exports = function (req, res, next) {
+export const authMiddleware = (req: express.Request, res: express.Response, next: express.NextFunction) => {
 
     const token = req.header('x-auth-token');
 
@@ -10,7 +11,7 @@ module.exports = function (req, res, next) {
 
     try {
         const decoded = jwt.verify(token, config.get('jwtPrivateKey'));
-        req.user = decoded;
+        req["user"] = decoded;
         next();
     } catch (ex) {
         res.status(400).send('invalid token');

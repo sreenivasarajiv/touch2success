@@ -1,29 +1,22 @@
 import * as express from 'express';
 require('express-async-errors');
+import * as authRoutes from '../routes/auth.route';
 import * as stateRoutes from '../routes/state.route';
+import * as storeRoutes from '../routes/store.route';
+import * as customerRoutes from '../routes/customer.route';
 
 import { logger } from '../middlewares/logger'
 import { handleError } from '../middlewares/error'
-
-// const customers = require('../routes/customers');
-// const genres = require('../routes/genres');
-// const movies = require('../routes/movies');
-// const rentals = require('../routes/rentals');
-// const users = require('../routes/users');
-// const auth = require('../routes/auth');
 
 export function route(app: express.Express) {
 
     app.use(express.json());
     app.use(logger);
 
-    // app.use('/api/genres', genres);
-    // app.use('/api/customers', customers);
-    // app.use('/api/movies', movies);
-    // app.use('/api/rentals', rentals);
-    // app.use('/api/users', users);
-    // app.use('/api/auth', auth);
+    app.use('/auth', authRoutes);
     app.use('/state', stateRoutes);
+    app.use('/store', storeRoutes);
+    app.use('/customer', customerRoutes);
     app.use('/', express.static('public'));
 
     // handling global errors

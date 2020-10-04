@@ -30,8 +30,7 @@ export class Customer {
   email: string;
 
   @ManyToOne(() => Store, (store) => store.customers, {
-    onDelete: "NO ACTION",
-    onUpdate: "NO ACTION",
+    cascade: true
   })
   @JoinColumn([{ name: "StoreId", referencedColumnName: "id" }])
   store: Store;

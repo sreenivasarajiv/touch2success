@@ -5,6 +5,7 @@ import {
   JoinColumn,
   ManyToOne,
   OneToMany,
+  AfterLoad,
 } from "typeorm";
 import { Customer } from "./Customer";
 import { States } from "./States";
@@ -40,9 +41,15 @@ export class Store {
   customers: Customer[];
 
   @ManyToOne(() => States, (states) => states.stores, {
-    onDelete: "NO ACTION",
-    onUpdate: "NO ACTION",
+    onUpdate: "CASCADE",
+    cascade: true,
   })
   @JoinColumn([{ name: "StateId", referencedColumnName: "id" }])
   state2: States;
+
+  @AfterLoad()
+  getDocumentsCount() {
+    this['totalCustomers'] = this.customers?.length;
+    delete this.customers;
+  }
 }

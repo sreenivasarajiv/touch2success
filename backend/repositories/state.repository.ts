@@ -1,5 +1,5 @@
-import { getConnection, Repository } from "typeorm";
-import { States } from "../models/States";
+import { getConnection, Repository } from 'typeorm';
+import { States } from '../models/States';
 
 export class StateRepository {
     
