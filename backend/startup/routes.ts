@@ -4,6 +4,7 @@ import * as authRoutes from '../routes/auth.route';
 import * as stateRoutes from '../routes/state.route';
 import * as storeRoutes from '../routes/store.route';
 import * as customerRoutes from '../routes/customer.route';
+import * as cors from 'cors';
 
 import { logger } from '../middlewares/logger'
 import { handleError } from '../middlewares/error'
@@ -11,6 +12,7 @@ import { handleError } from '../middlewares/error'
 export function route(app: express.Express) {
 
     app.use(express.json());
+    app.use(cors())
     app.use(logger);
 
     app.use('/auth', authRoutes);
