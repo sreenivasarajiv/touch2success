@@ -1,6 +1,6 @@
-const winston = require('winston');
+import * as winston from 'winston';
 
-module.exports = function () {
+export function exceptionHandler() {
 
     winston.add(new winston.transports.File({ filename: 'debug.log' }));
     winston.add(new winston.transports.Console({ format: winston.format.simple() }));
@@ -8,12 +8,12 @@ module.exports = function () {
     // handle global unhandled promise rejections
     process.on('unhandledRejection', ex => {
         console.log('WE GOT AN UNHANDLED REJECTED PROMISED:', ex);
-        winston.error(ex.message, ex);
+        winston.error((ex as any).message, ex);
     });
-    
+
     // handle global unhandled exceptions
-    winston.exceptions.handle([
+    winston.exceptions.handle(...[
         new winston.transports.File({ filename: 'unhandledExceptions.log' }),
-        new winston.transports.Console({ colorize: true, prettyPrint: true })
+        new winston.transports.Console()
     ]);
 }

@@ -1,5 +1,4 @@
 typeorm-model-generator -h <host> -d <database> -p [port] -u <user> -x
 [password] -e [engine]
 
-typeorm-model-generator -h db4free.net -d srajivdemodb -p 3306 -u sreenivasarajiv -x
-Qwerty123$ -e mysql
+typeorm-model-generator -h db4free.net -d srajivdemodb -p 3306 -u sreenivasarajiv -x Qwerty123$ -e mysql

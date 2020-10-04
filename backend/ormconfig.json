@@ -1,0 +1,13 @@
+{
+    "type": "mysql",
+    "host": "db4free.net",
+    "port": 3306,
+    "username": "sreenivasarajiv",
+    "password": "Qwerty123$",
+    "database": "srajivdemodb",
+    "entities": [
+        "models/*.js"
+    ],
+    "logging": true,
+    "synchronize": true
+}
