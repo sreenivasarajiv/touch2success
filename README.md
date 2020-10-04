@@ -23,9 +23,8 @@
 
 ### Todo:
 1. User details should be fetched from Database, Hardcoded as if now (not in given requirements)
-2. Front End Application
-3. Unit Test Implementation
-4. Dependency Injection Mechanism in Backend for injecting and managing Dependencies
+2. Unit Test Implementation
+3. Dependency Injection Mechanism in Backend for injecting and managing Dependencies
 
 ### Features
 1. TypeORM implementation
@@ -36,3 +35,30 @@
 6. Complete Code in Typescript 
 7. Database Connection Pooling
 8. App -> Routes -> Controller -> Services -> Repository styled code
+---
+## Front End
+### How to Run:
+
+        cd front-end && npm i
+        ng s
+
+<br>
+
+1. Web Application will be running in port __4200__.
+2. Open Browser and Navigate to __http://localhost:4200__
+3. In Order to clear Previous Login Token Credentials (if already loggedin), Open Chrome Dev Tools
+
+                localStorage.clear()
+
+### Todo:
+1. Yet to Implement Dashboad Logics
+   * __Store Component:__ Form for Store CRUD Operations, Search Store By Name, Show List of Stores with Total Customers
+   * __Customer Component:__ Form for Customer CRUD Operations, Show List of Customers, Show Store Information of a Customer
+   * State Management with __NgRx__
+   * Modular/Facade Design Pattern for Reusable/Shared Modules and Modular Code Structure
+   * Logout Mechanism
+
+### Features
+1. Auth Guard Mechanism to Handle JWT Token and Logging-in the User to Dashboard From Login Page, Once the Credentials are Validated on Backend side
+2. Angular Material Design (Partially Implemented)
+
